@@ -1,0 +1,34 @@
+<%= error_messages_for 'user' %>
+
+<!--[form:user]-->
+<p><label for="user_created_at">Created at</label><br/>
+<%= datetime_select 'user', 'created_at'  %></p>
+
+<p><label for="user_updated_at">Updated at</label><br/>
+<%= datetime_select 'user', 'updated_at'  %></p>
+
+<p><label for="user_password">Password</label><br/>
+<%= password_field_tag 'password', nil, { :size => 30, :id => 'password' } %></p>
+
+<p><label for="user_password_confirmation">PasswordConfirm</label><br/>
+<%= password_field_tag 'password_confirmation', nil, { :size => 30, :id => 'password_confirmation' } %></p>
+
+<p><label for="user_login">Login</label><br/>
+<%= text_field 'user', 'login'  %></p>
+
+
+<dt><label>Roles</label></dt>
+	<% for role in @role %>
+		<dd>
+			<%
+				if @user.roles.include? role
+					is_check = "checked"
+				else
+					is_check = ""
+				end
+			%>
+			<input type = "checkbox" <%=is_check%> name = "user[roles][]" value = '<%= role.id %>' ><%= h( role.identifier)%>
+		</dd>
+	<% end %>
+<!--[eoform:user]-->
+

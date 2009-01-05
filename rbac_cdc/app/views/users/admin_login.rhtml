@@ -1,0 +1,10 @@
+<% form_tag :action => 'admin_login', :method => 'post' do -%>
+			
+	<p><label for="user_login">Login</label><br/>
+	<%= text_field 'user', 'login'  %></p>
+	
+	<p><label for="user_password">Password</label><br/>
+	<%= password_field 'user', 'password'  %></p>
+		
+    <dd><%= submit_tag "Login" %></dd>
+<% end -%>

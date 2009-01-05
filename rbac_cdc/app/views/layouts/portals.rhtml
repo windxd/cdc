@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>门户页面</title>
+  <%= stylesheet_link_tag 'portal' %>
+  <%= javascript_include_tag :defaults %>
+</head>
+<body>
+<div id="frame">
+<div id="logo"><img src="/images/logo.gif">
+<div style="height: 2px;"></div>
+</div>
+<div id="navbar">
+<a href="/accounts/new"><strong><font color="#FFFFFF">首页</font></strong></a>︱
+<a href="/accounts/new">机构信息</a>︱
+<a href="/accounts/new">国际合作</a>︱
+<a href="/accounts/new">科技项目</a>︱
+<a href="/accounts/new">招生招聘</a>︱
+<a href="/accounts/new">培训会议</a>︱
+<a href="/accounts/new">技术服务</a>︱
+<a href="/accounts/new">卫生标准</a>︱
+<a href="/accounts/new">健康主题</a>︱
+<a href="/accounts/new">旅行健康</a>︱
+<a href="/accounts/new">公共卫生监测</a>︱
+<a href="/accounts/new" style="color:#BA2111; font-weight:bolder;">博士生网上报名</a>
+</div>
+
+<div id="mainp">
+	<div id="left">
+		
+		<!-- 左上角 登陆 -->
+		<div id="login">
+			<h3>login</h3>							
+			<% form_tag :controller => 'getmenuinfo' , :action => 'user_login' do %>
+			
+				<ul>			
+					<li><label for="user_login">用户名</label><br/>
+					<%= text_field 'user', 'login' ,:size => 10 %></li>
+					
+					<li><label for="user_password">密码</label><br/>
+					<%= password_field 'user', 'password' ,:size => 10 %></li>
+					
+					<li><label>模块</label><br/>
+						<%= select 'user' , 'menu', @hash_menu,{},{ :onchange => "new Ajax.Updater('role','/portals/get_role',{ parameters: { id: this.value} } ); "} %>						
+					</li>
+						
+					<!-- 得到角色　-->
+					<li><label>角色</label><br/>
+						<div id='role'>
+						
+						</div>						
+					</li>					
+					
+				  	<li><%= submit_tag "登 陆" , :class => "submit" %>
+						<input type="reset" value=" 重 置 " />
+					</li>
+			  </ul>			  			  
+			  
+			<% end %>
+			
+		</div>
+		
+		<!-- 左下角 -->
+		<div id="lside">
+					
+		  <ul> 
+	        <li id="linkto">科室网站</li>
+			<li><p align="center"><a href="http://www.jyyy.com.cn/ent/" target="_blank"><img border="0" src="/images/rx.gif" alt="普外乳腺专业"></a></li>
+			<li><p align="center"><a href="http://www.jyyy.com.cn/ent/" target="_blank"><img border="0" src="/images/shaoshang.gif" alt="烧伤整形科"></a> </li>
+			<li><p align="center"><a href="http://www.jyyy.com.cn/ent/" target="_blank"><img border="0" src="/images/erke.gif" alt="儿科"></a></li>
+			<li><p align="center"><a href="http://www.jyyy.com.cn/ent/" target="_blank"><img border="0" src="/images/tj.gif" alt="健康查体部"></a> </li>
+			<li><p align="center"><a href="http://www.jyyy.com.cn/ent/" target="_blank"><img border="0" src="/images/fk.gif" alt="河北医科大学第一医院妇产科"></a></li>
+	    	<li><p align="center"><a href="http://www.jyyy.com.cn/ent/"><img border="0" src="/images/ent.gif" alt="耳鼻喉头颈外科"></a></li>
+	      </ul>
+		
+		</div>
+	</div>
+	
+	
+	<!-- 中间 新闻 -->
+	<div id="mid">
+	  <table class="titnm">
+        <tr>
+          <td>疾控信息</td>
+        </tr>
+      </table>
+	  <table height="120" border="1" align="center" cellpadding="0" cellspacing="0" class="quankuang">
+        <tr>
+          <td colspan="2" valign="top" align="left" style="padding-top:5px;padding-bottom:5px;">
+          <table width=98% height=185  border=0 align=center cellpadding=0 cellspacing=0><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4153&CatalogName=疾控信息 target=_blank title=我中心成功举办食品微生物学检验方法国家标准培训班>我中心成功举办食品微生物学检验方法国家标准培训班</a> &nbsp;&nbsp;<span class="style5">[12-10]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4106&CatalogName=疾控信息 target=_blank title=加强技术培训 维护食品安全>加强技术培训 维护食品安全</a> &nbsp;&nbsp;<span class="style5">[11-19]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4105&CatalogName=疾控信息 target=_blank title=我中心成功举办面向农村和城市社区推广适宜项目培训班>我中心成功举办面向农村和城市社区推广适宜项目培训班...</a> &nbsp;&nbsp;<span class="style5">[11-19]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4080&CatalogName=疾控信息 target=_blank title=日本国立琉球大学医学部教授青木一雄博士来我中心参观访问>日本国立琉球大学医学部教授青木一雄博士来我中心参观...</a> &nbsp;&nbsp;<span class="style5">[11-10]</span></td></tr><td width="93%">&nbsp;<img src=images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4059&CatalogName=疾控信息 target=_blank title=福建省微生物与免疫第十二次学术研讨会征文通知>福建省微生物与免疫第十二次学术研讨会征文通知</a> &nbsp;&nbsp;<span class="style5">[10-10]</span></td></tr><td width="93%">&nbsp;<img src=images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=3998&CatalogName=疾控信息 target=_blank title=专家:服用三聚氰胺含量较低的奶粉不用过于担心>专家:服用三聚氰胺含量较低的奶粉不用过于担心</a> &nbsp;&nbsp;<span class="style5">[09-19]</span></td></tr><td width="93%">&nbsp;<img src=images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=3990&CatalogName=疾控信息 target=_blank title=福建省“全民健康生活方式行动”在榕启动>福建省“全民健康生活方式行动”在榕启动</a> &nbsp;&nbsp;<span class="style5">[09-08]</span></td></tr><td width="93%">&nbsp;<img src=images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=3984&CatalogName=疾控信息 target=_blank title=省卫生厅六项措施加强霍乱预防控制工作>省卫生厅六项措施加强霍乱预防控制工作</a> &nbsp;&nbsp;<span class="style5">[09-03]</span></td></tr><td width="93%">&nbsp;<img src=images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=3983&CatalogName=疾控信息 target=_blank title=我省加强中央补助地方结核病防治项目管理>我省加强中央补助地方结核病防治项目管理</a> &nbsp;&nbsp;<span class="style5">[09-03]</span></td></tr></table>
+		 </td>
+        </tr>
+      </table>
+      
+      <table class="titnm">
+        <tr>
+          <td><label>中心动态</label></td>
+        </tr>
+      </table>
+      <table height="120" border="1" align="center" cellpadding="0" cellspacing="0" class="quankuang">
+        <tr>
+          <td colspan="2" valign="top" align="left" style="padding-top:5px;padding-bottom:5px;">
+          <table width=98% height=185  border=0 align=center cellpadding=0 cellspacing=0><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4148&CatalogName=中心动态 target=_blank title=中心召开科学发展观教育活动暨解放思想专题讨论会>中心召开科学发展观教育活动暨解放思想专题讨论会</a> &nbsp;&nbsp;<span class="style5">[12-08]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4147&CatalogName=中心动态 target=_blank title=中心财务科顺利通过省直级青年文明号考核验收>中心财务科顺利通过省直级青年文明号考核验收</a> &nbsp;&nbsp;<span class="style5">[12-08]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4140&CatalogName=中心动态 target=_blank title=中心团委召开创号交流暨社会监督员座谈会>中心团委召开创号交流暨社会监督员座谈会</a> &nbsp;&nbsp;<span class="style5">[12-03]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4137&CatalogName=中心动态 target=_blank title=遏制艾滋 履行承诺>遏制艾滋 履行承诺</a> &nbsp;&nbsp;<span class="style5">[12-01]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4109&CatalogName=中心动态 target=_blank title=省疾控中心举办艾滋病宣传活动>省疾控中心举办艾滋病宣传活动</a> &nbsp;&nbsp;<span class="style5">[11-25]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4079&CatalogName=中心动态 target=_blank title=中心举办工会干部、团干及青年文明号培训班>中心举办工会干部、团干及青年文明号培训班</a> &nbsp;&nbsp;<span class="style5">[11-03]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4076&CatalogName=中心动态 target=_blank title=中心召开第一届职工代表大会第七次专题会议>中心召开第一届职工代表大会第七次专题会议</a> &nbsp;&nbsp;<span class="style5">[10-30]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4073&CatalogName=中心动态 target=_blank title=中心团委开展2008年主题团日活动>中心团委开展2008年主题团日活动</a> &nbsp;&nbsp;<span class="style5">[10-28]</span></td></tr><td width="93%">&nbsp;<img src=/images/arr2.jpg width=10 height=10 border=0>&nbsp;<a href=xinwen.asp?vid=4072&CatalogName=中心动态 target=_blank title=中心团委召开各类创建动员大会>中心团委召开各类创建动员大会</a> &nbsp;&nbsp;<span class="style5">[10-22]</span></td></tr></table>
+          </td>
+        </tr>
+      </table>
+	</div>
+	
+	
+	
+	
+	<div id="right">
+		
+		<!-- 右上角 公告 -->
+		<table id="tabanno"cellspacing="0" cellpadding="0" border="0" width="100%">
+		<tbody>
+		<tr>
+		<td>
+		<div align="center">
+		<table height="120" cellspacing="0" cellpadding="0" width="100%">
+		<tbody>
+		<tr height="23">
+		<td id="anno">
+		公告栏
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<table cellspacing="0" cellpadding="0" border="0" align="center" width="95%">
+		<tbody>
+		<tr>
+		<td height="120" bgcolor="#ffffff" width="100%" valign="top">
+		<marquee height="120" align="middle" direction="up" scrolldelay="0" scrollamount="2" onmouseout="this.start()" onmouseover="this.stop()">
+		<table cellspacing="0" cellpadding="0" border="0" align="center" width="95%">
+		<tbody>
+		<tr>
+		<td>
+		<div align="center">
+		<table style="width: 100%; border-collapse: collapse;">
+		<tbody>
+		<tr>
+		<td>
+		<span style="color: rgb(72, 61, 139);">--></span>
+		<a target="_blank" href="/news_34970.html">
+		<span style="color: rgb(72, 61, 139);">本市减免费流感疫苗接种时间延长至11月15日</span>
+		</a>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<span style="color: rgb(72, 61, 139);">--></span>
+		<a target="_blank" href="/news_34922.html">
+		<span style="color: rgb(72, 61, 139);">全市卫生系统圆满完成国庆期间医疗卫生保障任务</span>
+		</a>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<span style="color: rgb(72, 61, 139);">--></span>
+		<a target="_blank" href="/news_34920.html">
+		<span style="color: rgb(72, 61, 139);">我市支援什邡首批医疗队返京</span>
+		</a>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<span style="color: rgb(255, 99, 71);">--></span>
+		<a target="_blank" href="/news_34625.html">
+		<span style="color: rgb(255, 0, 0);">我中心获得卫生部化妆品检验机构资质</span>
+		</a>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+		</div>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+		</marquee>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+		</td>
+		</tr>
+		<tr><td style="color:red; text-align:right;font-size:10px"><a href="#">更多>>]</a></td></tr>
+		</tbody>
+		</table>
+		</div>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+		
+		
+		<!-- 右下角 -->
+		<div id="rside">
+			<table class="navs">
+				<tr><td colspan="2"><label>  <a href="http://www.baidu.com">健康生活</a> </label></td></tr>
+				<tr>
+					<td><img src="/images/icon_healthyliv.gif" width="46" height="46" alt="形象的果树" /></td>
+					<td><span>骨骼健康，体育活动，免疫，遗传，性健康，预防吸烟...</span></td>
+				</tr>
+			</table>
+			<table class="navs">
+				<tr><td colspan="2"><label><a href="http://www.google.cn">疾病及细则</a></label></td></tr>
+				<tr>
+					<td><img src="/images/icon_diseases.gif" width="46" height="46" alt="听诊器" /></td>
+					<td><span>多动症，出生缺陷，糖尿病，胎儿酒精症候群，流感，艾滋病，性病... </span></td>
+				</tr>
+			</table>
+			
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<div id="ftr">
+		&copy;版权所有(COPYRIGHT)：中国疾病预防控制中心　<br>
+								地址：北京中国疾病预防控制中心 　邮编：100083
+	</div>
+
+</div>
+</div>
+</body>
+</html>

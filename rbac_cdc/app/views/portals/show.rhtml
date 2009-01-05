@@ -1,0 +1,8 @@
+<% for column in Portal.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @portal.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @portal %> |
+<%= link_to 'Back', :action => 'list' %>

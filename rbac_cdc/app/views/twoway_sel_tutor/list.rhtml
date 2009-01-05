@@ -1,0 +1,281 @@
+<h3>您的位置是:    课题管理-->双向选择导师 </h3>
+
+<!-- 查询 start -->
+
+<div id="search" style="display: none;">
+  		<table width="100%" cellpadding="0" cellspacing="1" class="tab_0">
+  <tr>
+    <td width="100%" height="22"><table width="100%"  border="0" class="tab_title">
+        <tr>
+            <td width="53%" height="22"><strong> </strong>查询条件</td>
+          <td width="47%"><div align="left" id="getbutton"></div></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tbody>
+    <tr>
+      <td class="tab_5"><table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" >
+            <tr> 
+              <td height=8 colspan="2"></td>
+            </tr>
+            <tr> 
+            	<td id="rowtitle" width="11%" height="22" class="tab_1">院系班级信息</td>
+          		<td width="89%" class="tab_1"><input name="query" type="radio" value="radiobutton" checked="checked"  onclick="showds();hidexs()"/>
+              	导师查询 
+               	<input type="radio" name="query" value="radiobutton"  onclick="showxs();hideds()"/>
+               	学生查询</td>
+           	  </tr>
+              <tr> 
+                <td colspan="2">
+                
+	                <div id="daoshi">
+	                  <table width="100%" cellpadding="1" cellspacing="1" style="font-size:12px">
+	                    <tr id="sub0"> 
+	                      <td width="22%" height="24" align="right" style="border:1px solid #B9CBF7">导师：</td>
+	                      <td width="25%" style="border:1px solid #B9CBF7"><input type="text" name="tutor" /></td>
+	                      <td width="21%" height="24" align="right" style="border:1px solid #B9CBF7">教师编号：</td>
+	                      <td width="32%" style="border:1px solid #B9CBF7"><input type="text" name="tutorNum" /></td>
+	                    </tr>
+	                  </table>
+	                </div>
+	                <div id="xuesheng" style="display:none">
+	                	<table width="100%" cellpadding="1" cellspacing="1" style="font-size:12px">
+		                  <tr id="sub0" class="tab_5"> 
+		                    <td width="22%" height="24" align="right" style="border:1px solid #B9CBF7">学院：</td>
+		                    <td width="25%" style="border:1px solid #B9CBF7"><select name="student.xybh" onChange="CPPullSubSelect2('student.xybh')">
+		                      </select></td>
+		                    <td width="21%" height="24" align="right" style="border:1px solid #B9CBF7">系：</td>
+		                    <td width="32%" style="border:1px solid #B9CBF7"><select name="student.yxsh" onChange="CPPullSubSelect2('student.yxsh');">
+		                      </select></td>
+		                  </tr>
+		                  <tr> 
+		                    <td height="24" align="right" style="border:1px solid #B9CBF7">专业：</td>
+		                    <td style="border:1px solid #B9CBF7"><select name="student.zyh" onChange="CPPullSubSelect2('student.zyh');">
+		                      </select></td>
+		                    <td height="23" align="right" style="border:1px solid #B9CBF7">班级：</td>
+		                    <td style="border:1px solid #B9CBF7"><select  name="student.bh">
+		                      </select></td>
+		                  </tr>
+		                  <tr> 
+		                    <td height="23" align="right" style="border:1px solid #B9CBF7">学号：</td>
+		                    <td style="border:1px solid #B9CBF7"><input type="text"/></td> 
+		                    <td height="24" align="right" style="border:1px solid #B9CBF7">姓名：</td>
+		                    <td style="border:1px solid #B9CBF7"><input type="text"/></td>
+		                  </tr>
+						   <tr> 
+		                    <td height="24" align="right" style="border:1px solid #B9CBF7">入学年份：</td>
+		                    <td style="border:1px solid #B9CBF7"><select size="1">
+							<option selected>－</option>
+		                    <option>2000</option>
+		                    <option>2001</option>
+		                    <option>2002</option>
+		                      </select></td>
+		                    <td height="23" align="right" style="border:1px solid #B9CBF7">&nbsp;</td>
+		                    <td style="border:1px solid #B9CBF7">&nbsp;</td>
+		                  </tr>
+		                </table>
+	                </div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan=2><hr size=1></td>
+              </tr>
+           </table></td>
+        </tr>
+        <tr>
+          <td height=20 style="background:#9EB8F3"><div align="center">
+            <input name="Submit3" type="button" class="button" class="button" value="查  询">
+            <input name="Submit82" type="reset" class="button" value="重  置">
+          </div></td>
+       </tr>
+       </tbody>
+      </table>
+      <div class="btmline"></div>
+      <div class="btmline2"></div>
+  	</div>
+
+<!-- 查询 end -->
+
+
+<!-- 修改 start -->
+  
+  	<div id="modify" style="display: none;">
+  		<table width="100%" cellpadding="0" cellspacing="1" class="tab_0">
+ 		<tr>
+  		  <td width="100%" height="22">
+  		    <table width="100%"  border="0" class="tab_title" style="font-size:12px">
+		        <tr>
+		          <td width="53%" height="22">修改该学生的导师</td>
+		          <td width="47%"><div align="right" id="getbutton"></div></td>
+		        </tr>
+   			</table>
+   	 	  </td>
+ 		</tr>
+  <tbody>
+    <tr>
+      <td class="tab_5">
+        <table width="98%" align="center" cellpadding="0" cellspacing="0">
+          <tr><td height=8></td></tr>
+          <tr>
+            <td><table width="100%" align="center" cellpadding="1" cellspacing="1" class="tab_1" style="font-size:12px">
+            	<colgroup><col align=center span=8></colgroup>
+            	<tr class="tab_5">
+	                <td>学号：jk0001</td>
+			      	<td>姓名：王飞</td>
+			      	<td>籍贯：天津</td>
+			      	<td>出生日期：1979年12月3日</td>
+			      	<td>入学日期：1999年</td>
+			      	<td>所在学院：机械学院</td>
+			      	<td>通讯地址：河北石家庄</td>
+			      	<td><table style="font-size:12px"><tr><td>导师：</td>
+			      	<td><div style="position:relative;"> 
+						<span style="margin-left:55px;width:18px;overflow:hidden;"> 
+							<select style="width:118px;margin-left:-100px" onclick="this.parentNode.nextSibling.value=this.value"> 
+								<option value="王三老师">王三老师</option> 
+								<option value="张三老师">张三老师</option>
+							</select></span><input name="box" style="width:100px;position:absolute;left:0px;"></div> </td></tr></table></td>
+	    	    </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="right"><hr size=1 class="tab_0"></td>
+          </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td height="20"><div align="center">
+          <input name="Submit3" type="button" class="button" class="button" value="提  交">
+        </div></td>
+    </tr>
+  </tbody>
+</table>
+  	
+      <div class="btmline"></div>
+      <div class="btmline2"></div>
+  	</div>
+  <!-- 修改 end -->
+  
+  <!-- 添加 start -->
+  	
+ 	<div id="addition" style="display:none">
+ 	  <table width="100%" cellpadding="0" cellspacing="1" class="tab_0">
+ 		<tr>
+  		  <td width="100%" height="22">
+  		    <table width="100%"  border="0" class="tab_title" style="font-size:12px">
+		        <tr>
+		          <td width="53%" height="22">为导师添加学生 </td>
+		          <td width="47%"><div align="right" id="getbutton"></div></td>
+		        </tr>
+   			</table>
+   	 	  </td>
+ 		</tr>
+  <tbody>
+    <tr>
+      <td class="tab_5">
+        <table width="98%" align="center" cellpadding="0" cellspacing="0">
+          <tr><td height=8></td></tr>
+          <tr>
+            <td><table width="100%" cellpadding="1" cellspacing="1" class="tab_1" style="font-size:12px">
+            	<tr class="tab_5">
+            		<td colspan=6 width="10%" height="24">输入/选择导师：</td>
+            	</tr>
+            		<!-- 显示导师详细信息 -->
+            	<tr class="tab_5">
+            		<td colspan=6 height="24"><div style="position:relative;"> 
+						<span style="margin-left:100px;width:18px;overflow:hidden;"> 
+							<select style="width:118px;margin-left:-100px" onclick="this.parentNode.nextSibling.value=this.value"> 
+								<option value="王三老师">王三老师</option> 
+								<option value="张三老师">张三老师</option>
+							</select></span><input name="box" style="width:100px;position:absolute;left:0px;"></div>
+					</td>
+            	</tr>
+            	<tr class="tab_5">
+            		<td colspan=6 height="24">为该导师添加学生：</td>
+            	</tr>
+            	<tr class="tab_5">
+                  <td width="10%" height="24" align="right">学院：</td>
+                  <td width="20%"><select name="select">
+                    <option value="北校区" selected>理学院&nbsp;&nbsp;&nbsp;</option>
+                    <option value="文法学院">文法学院&nbsp;&nbsp;&nbsp;</option>
+                  </select></td>
+				  <td height="24" align="right" width="10%">系：</td>
+                  <td width="20%"><select name="select">
+                    <option value="管理学" selected>管理学院</option>
+                    <option value="经济学">文法学院&nbsp;&nbsp;&nbsp;</option>
+                  </select></td>
+				   <td height="10" align="right" width="10%">专业：</td>
+                  <td width="30%"><select name="select">
+                    <option value="信息与计算科学" selected>信息与计算科学</option>
+                    <option value="生物医学">生物医学&nbsp;&nbsp;&nbsp;</option>
+                  </select></td>
+                </tr>
+                <tr class="tab_5">
+                  <td width="10%" height="24" align="right">班级：</td>
+                  <td width="20%"><select name="select">
+                    <option value="01" selected>01</option>
+                    <option value="02">02&nbsp;&nbsp;&nbsp;</option>
+                  </select></td>
+				  <td height="24" align="right" width="10%">姓名：</td>
+                  <td width="20%"><input type="text" name="textfield3"></td>
+				   <td height="10" align="right" width="10%">学号：</td>
+                  <td width="30%"><input type="text" name="textfield3"></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="right"><hr size=1 class="tab_0"></td>
+          </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td height="20"><div align="center">
+          <input onclick="confirm('确定要添加这位同学吗?')" name="Submit3" type="button" class="button" class="button" value="提  交">
+        </div></td>
+    </tr>
+  </tbody>
+</table>
+		<div class="btmline"></div>
+		<div class="btmline2"></div>
+  	</div>
+  <!-- 添加 end -->
+  
+  
+
+<table id="maint">
+  <tr>
+  	<td colspan="11" id="list"><a href="#" onclick="hideSear(); hidemf(); hidead();" style="font-weight: bolder;"><span>列表</span></a> | 
+  		<a href="#" onclick="showSear();hidemf(); hidead();"><span>查询</span></a>
+	</td>
+  </tr>
+  <tr>
+  	<td colspan="11" id="nav">
+  		共有XX条 第X页/共y页 每页 <input type="text" name="gotoPage" size="1" maxlength="4" class="button"> 条 
+  		<a href="#" onclick="new Effect.BlindDown('tab');">首页 </a> <%= link_to '| 上页', { :page => @sel_tutor_pages.current.previous } if @sel_tutor_pages.current.previous %> <%= link_to '| 下页', { :page => @sel_tutor_pages.current.next } if @sel_tutor_pages.current.next %> | 
+  		<a href="#">末页</a>  转到 <input type="text" name="gotoPage" size="1" maxlength="4" class="button"> 页 <input type="button" class="button" size="1" value="go" />
+  	<span style="margin-left:440px"></span>
+  		<input onclick="showmf(); hideSear(); hidead();" type="button" class="button" value="修  改" />
+  		<input onclick="showad(); hidemf(); hideSear();" type="button" class="button" value="添  加" />
+  		<input type="button" class="button" value="打  印" />
+  	</td>
+  </tr>
+  <tr>
+  <% for column in SelTutor.content_columns %>
+    <th class="firline"><%= column.human_name %></th>
+  <% end %>
+    <th class="firline" colspan="3"></th>
+  </tr>
+  
+<% for sel_tutor in @sel_tutors %>
+  <tr>
+  <% for column in SelTutor.content_columns %>
+    <td class="aline"><%=h sel_tutor.send(column.name) %></td>
+  <% end %>
+    <td class="aline"><%= link_to '显示', :action => 'show', :id => sel_tutor %></td>
+    <td class="aline"><%= link_to '修改', :action => 'edit', :id => sel_tutor %></td>
+    <td class="aline"><%= link_to '删除', { :action => 'destroy', :id => sel_tutor }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<%= link_to '添加一条纪录', :action => 'new' %>

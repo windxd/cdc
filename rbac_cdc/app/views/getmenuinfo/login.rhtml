@@ -1,0 +1,18 @@
+<% form_tag :action => 'user_login' do %>
+			
+	<p><label for="user_login">Login</label><br/>
+	<%= text_field 'user', 'login'  %></p>
+	
+	<p><label for="user_password">Password</label><br/>
+	<%= password_field 'user', 'password'  %></p>
+	
+	<%= select 'user' , 'menu',  @hash_menu,{},{ :onchange => "new Ajax.Updater('role','./get_role',{ parameters: { id: this.value} } ); "} %>	
+		
+	<!-- µÃµ½½ÇÉ«¡¡-->
+	<div id='role'>
+		
+	</div>
+	
+	
+  <dd><%= submit_tag "Login" %></dd>
+<% end %>

@@ -1,0 +1,219 @@
+body {
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size:   13px;
+	line-height: 18px;
+	color: #333;
+}
+
+#frame {
+	margin: 0px auto;
+	padding: 1px;
+	width: 950px;
+}
+
+a:link,a:visited {
+	text-decoration: none; 
+	color: #425290 
+} 
+
+a:hover {
+	text-decoration: underline;
+	color: #FF9900
+}
+
+#navbar {
+	background: #195CB5;
+	width: 908px;
+	color: #ffffff;
+	padding: 3px 20px 3px 20px;
+}
+
+#navbar a {
+	color: #DAF6FF
+}
+
+#mainp, #ftr {
+	width: 950px;
+	text-align: center;
+}
+
+#mainp{
+}
+
+#left {
+	float: left;
+	width: 180px;
+	margin: 0px;
+	padding: 0px;
+}
+
+h3 {
+	background: #F9E7C3;
+	padding: 10px 0 10px 0;
+	margin: 3px;
+}
+
+#login {
+	background: #FEFEFE;
+	border: 1px solid #CDCDCD;
+	margin: 2px;
+	position: relative;
+}
+
+#mform {
+	margin: 0;
+	padding: 0;
+}
+
+#login:hover {
+	background: #FCF5E3;
+}
+
+#login label {
+	width: 60px;
+	float: left;
+}
+
+#login li {
+	border-top: 1px dotted #CDCDCD;
+}
+
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+li{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+p { 
+	padding: 0; 
+	margin: 0; 
+} 
+
+a {
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+}
+
+#lside {
+	background: #FFFBEC;
+	height: 295px;
+}
+
+#lside li {
+	padding-top: 8px;
+}
+
+#linkto {
+	height: 23px;
+	text-align: center;
+	background: #ff9933;
+	
+}
+
+#anno {
+	width: 100%;
+	background: #4383CA;
+	color: darkgreen;
+	font-weight: bolder;
+	text-align: center;
+}
+
+#tabanno {
+	margin: 1px 5px 0 1px;
+	padding-bottom: 7px;
+}
+
+#tabanno:hover {
+	border-top: 3px solid #E9E9EB;
+	border-left: 3px solid #E9E9EB;
+	border-right: 5px solid #8C8C8C;
+	border-bottom: 5px solid #6C6C6C;
+	background: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+#anno h4 {
+	position: relative;
+	top: 10px;
+	color: darkblue;
+}
+
+#mid {
+	float: left;
+	width: 590px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.titnm {
+	border: 1px solid #ccc;
+	width: 100%;
+	font-weight: bolder;
+	background: #4383CA;
+	color: yellow;
+	text-align: left;
+}
+
+.quankuang {
+	width: 100%;
+}
+
+.style5 {
+
+	color: #cc0000
+
+}
+
+#right {
+	float: left;
+	width: 170px;
+	background: #ECF2FE;
+	margin: 0px;
+	padding: 0px;
+}
+
+#rside {
+	padding-top: 0px;
+}
+
+.navs {
+	width: 160px;
+	margin: 20px 5px 0px 5px;
+	background: #fff;
+	border: 1px solid #999999;
+	cursor:pointer;
+}
+
+.navs label {
+	font-weight: bolder;
+}
+
+.navs:hover {
+	background: #FDF8DA;
+}
+
+.navs:hover a {
+	text-decoration: underline;
+}
+
+
+#fline {
+	height: 3px;
+	background: #195CB5;
+	width: 950px;
+}
+
+#ftr {
+	border-top: 3px solid #195CB5;
+	background: #ccc;
+	color: #000;
+	height: 45px;
+	float: left;
+}

@@ -1,0 +1,26 @@
+<table>
+<% @perm %>
+<% for permission in @permissions %>
+	<% 
+			if permission.code.length== 1
+				space = ""			 
+			end
+			
+			if permission.code.length== 2
+				space = "&emsp;&emsp;"			 
+			end
+			if permission.code.length== 3
+				space = "&emsp;&emsp;&emsp;&emsp;"			 
+			end
+			if permission.code.length== 4
+				space = "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"			 
+			end			
+	%>
+	
+	<% if permission.code[0,1] == @perm.code %>
+	<tr><td><%= space + permission.identifier%></td></tr>
+	<% end %>
+	
+<% end %>
+
+<table>

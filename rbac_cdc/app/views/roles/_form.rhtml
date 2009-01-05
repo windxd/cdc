@@ -1,0 +1,127 @@
+<%= error_messages_for 'role' %>
+<script type="text/javascript" charset="utf-8">
+	  		//小类点击后的事情处理
+  		function checkSmallClass( smallClassCode ){
+  			//如果被点击，则大类被点击
+  			var smallCheck = document.getElementById(smallClassCode).checked;
+  			
+  			//判断是几级节点，通过长度进行判断
+  			var smallClassLength = smallClassCode.length;  			
+  			//alert(smallClassLength);
+  			
+  			//alert(bigClassId);
+  			if( smallCheck ){
+  				//将所有关联的上级选中
+  				for( var i = 1; i < smallClassLength; i ++ ){  				
+  					var bigClassId = smallClassCode.substr(0,i);
+  					//alert(bigClassId);
+  					document.getElementById(bigClassId).checked = true;
+  				}
+  				
+  				//同时把下级的所有的类都选中
+  				var   xs=document.getElementsByTagName('INPUT');   			
+  				for(var   i=0;i<xs.length;i++){   
+      				if(xs[i].type=='checkbox'){
+      					var checkId = xs[i].id;      			
+      					if(checkId.substr(0,smallClassLength)==smallClassCode && checkId != smallClassCode){
+      						xs[i].checked = true;
+      					}
+      				}   
+        			 
+  				} 
+  			} 
+  			
+  			if( !smallCheck ){
+  				//先将此大类下所有小类点掉
+  				var   xs=document.getElementsByTagName('INPUT');   			
+  				for(var   i=0;i<xs.length;i++){   
+      				if(xs[i].type=='checkbox'){
+      					var checkId = xs[i].id;      			
+      					if(checkId.substr(0,smallClassLength)==smallClassCode && checkId != smallClassCode){
+      						xs[i].checked = false;
+      					}
+      				}   
+        			 
+  				} 
+  				
+  				//调用函数cancleBigCheck去检查是否要把父结点给取消选中状态
+  				cancleBigCheck( smallClassCode );
+  			}  					  			  	
+  		}
+  		
+  		function cancleBigCheck( classId ){
+  			//用来取消选中某一小类时是否将上级的大类也取消选中
+  			//用递归来搞定。
+  			//alert(classId);
+  			document.getElementById(classId).checked = false;
+  			var classLen = classId.length;
+  			
+		  	var   xs=document.getElementsByTagName('INPUT');   
+		  	
+		  	//用来判断是否所有兄弟结点都没有“选中状态”
+		  	var isAllBrotherClassCheck = 0;			
+			for(var i=0;i<xs.length;i++){   
+   				if(xs[i].type=='checkbox'){
+   					var checkId = xs[i].id;      			
+   					if(checkId.substr(0,classLen-1)== classId.substr(0,classLen-1) && checkId != classId && checkId.length == classLen ){
+   						if( xs[i].checked == true ){   							
+   							isAllBrotherClassCheck = 1;
+   						}   						
+   					}
+   				}   
+     			 
+			}
+			
+			if( isAllBrotherClassCheck == 0 ){
+				//没有兄弟结点在选中状态		
+				if( classLen != 1 ){
+					cancleBigCheck( classId.substr( 0, (classLen-1) ) );
+				}							
+			}else{
+				//有兄弟结点在选中状态
+			}
+  			
+  		}
+</script>
+<!--[form:role]-->
+<p><label for="role_created_at">Created at</label><br/>
+<%= datetime_select 'role', 'created_at'  %></p>
+
+<p><label for="role_updated_at">Updated at</label><br/>
+<%= datetime_select 'role', 'updated_at'  %></p>
+
+<p><label for="role_identifier">Identifier</label><br/>
+<%= text_field 'role', 'identifier'  %></p>
+
+<table>
+	<tr><th></th><th>Identifier</th><th>Url</th><th>Code</th></tr>
+	<% for permision in @permissions%>
+	<tr>
+		<% 
+			if permision.code.length== 1
+				space = ""			 
+			end
+			
+			if permision.code.length== 2
+				space = "&emsp;&emsp;"			 
+			end
+			if permision.code.length== 3
+				space = "&emsp;&emsp;&emsp;&emsp;"			 
+			end
+			if permision.code.length== 4
+				space = "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"			 
+			end
+			
+			if @role.static_permissions.include? permision
+				is_check = "checked"
+			else
+				is_check = ""
+			end
+		%>
+		<td><input type = "checkbox" <%= is_check%> name = "role[static_permissions][]" id = "<%= permision.code%>" value = "<%= permision.id%>" onclick = "checkSmallClass('<%= permision.code%>')"></td><td><%= space+permision.identifier%></td><td><%= permision.url%></td>
+		<td><%= permision.code%></td>
+	</tr>
+	<% end %>
+</table>
+<!--[eoform:role]-->
+

@@ -1,0 +1,2 @@
+module GetmenuinfoHelper
+end

@@ -1,0 +1,13 @@
+<%= error_messages_for 'static_permission' %>
+
+<!--[form:static_permission]-->
+<p><label for="static_permission_created_at">Created at</label><br/>
+<%= datetime_select 'static_permission', 'created_at'  %></p>
+
+<p><label for="static_permission_updated_at">Updated at</label><br/>
+<%= datetime_select 'static_permission', 'updated_at'  %></p>
+
+<p><label for="static_permission_identifier">Identifier</label><br/>
+<%= text_field 'static_permission', 'identifier'  %></p>
+<!--[eoform:static_permission]-->
+
